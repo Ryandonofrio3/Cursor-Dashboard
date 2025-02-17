@@ -6,9 +6,9 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
 import { motion } from "framer-motion"
 
 const COLORS = {
-  positive: '#A8A8A8', // Light gray
-  negative: '#4A4A4A', // Dark gray
-  neutral: '#787878'  // Medium gray
+  Positive: '#A8A8A8', // Light gray
+  Negative: '#4A4A4A', // Dark gray
+  Neutral: '#787878'  // Medium gray
 };
 
 interface SentimentChartProps {

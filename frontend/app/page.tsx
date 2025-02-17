@@ -86,8 +86,9 @@ export default async function Home({ searchParams }: Props) {
   }));
 
   const sentimentChartData = filteredPosts.map(post => ({
-    sentiment: post.sentiment,
+    sentiment: post.sentiment[0].toUpperCase() + post.sentiment.slice(1),
   }));
+
 
   const sentimentByCategoryData = filteredPosts.map(post => ({
     category: post.category,
