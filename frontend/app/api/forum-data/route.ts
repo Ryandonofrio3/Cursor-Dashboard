@@ -12,7 +12,6 @@ export async function GET() {
     
     // Read the JSON file
     const jsonData = await fs.readFile(jsonPath, 'utf8')
-    console.log("jsonData", jsonData)
     // Parse the JSON data
     const data = JSON.parse(jsonData) as ForumData
     

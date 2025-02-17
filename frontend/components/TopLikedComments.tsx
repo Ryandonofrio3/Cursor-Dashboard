@@ -51,16 +51,16 @@ export function TopLikedComments({ data, timeframe }: TopLikedCommentsProps) {
       transition={{ duration: 0.5 }}
       className="p-3 sm:p-6"
     >
-        <span className="flex flex-col sm:flex-row items-center justify-center mb-4 space-y-1 sm:space-y-0">
-          <h2 className="text-xl sm:text-2xl font-semibold text-center text-white">Most Liked Comments</h2>
+        <span className="flex flex-col sm:flex-row items-center mb-4 space-y-1 sm:space-y-0">
+          <h2 className="text-xl sm:text-2xl font-semibold  text-white">Most Liked Comments</h2>
           {timeframe == 'all' && (
-            <p className="text-lg sm:text-2xl text-center text-white sm:ml-2">of {finalTimeframe}</p>
+            <p className="text-lg sm:text-2xl font-semibold text-white sm:ml-2">of {finalTimeframe}</p>
           )}
           {timeframe !== 'all' && (
-            <p className="text-lg sm:text-2xl text-center text-white sm:ml-2">of the last {finalTimeframe}</p>
+            <p className="text-lg sm:text-2xl  text-white sm:ml-2">of the last {finalTimeframe}</p>
           )}
         </span>
-      <div className="h-[300px] sm:h-[400px] relative mt-2">
+      <div className="min-h-[300px] sm:min-h-[400px] relative mt-2">
         <div className="absolute inset-0 flex items-center justify-between px-2 sm:px-4">
           <Button 
             onClick={previousComment}
@@ -82,10 +82,10 @@ export function TopLikedComments({ data, timeframe }: TopLikedCommentsProps) {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
-            className="h-full flex flex-col justify-center px-6 sm:px-12"
+            className="min-h-full flex flex-col justify-center px-6 sm:px-12 py-8"
           >
             <div className="text-center">
-              <p className="text-base sm:text-xl mb-2 sm:mb-4 text-white px-1 sm:px-2">{sortedComments[currentIndex].text}</p>
+              <p className="text-base sm:text-xl mb-2 sm:mb-4 text-white px-1 sm:px-2 break-words">{sortedComments[currentIndex].text}</p>
               <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-sm sm:text-base text-white">
                 <span>by {sortedComments[currentIndex].username}</span>
                 <span className="hidden sm:inline">•</span>

@@ -112,6 +112,32 @@ export default async function Home({ searchParams }: Props) {
   const avgLikes = Math.round(filteredPosts.reduce((acc, post) => acc + post.comments.reduce((cAcc, comment) => cAcc + comment.likes, 0), 0) / totalComments);
   const uniqueUsers = new Set(filteredPosts.flatMap(post => post.comments.map(comment => comment.username))).size;
 
+  // Calculate stats for previous period for comparison
+  const previousCutoffDate = new Date(cutoffDate.getTime() - (cutoffDate.getTime() - new Date(0).getTime()));
+  const previousPosts = posts.filter(post => {
+    const postDate = new Date(post.comments[0].timestamp);
+    return postDate >= previousCutoffDate && postDate < cutoffDate;
+  });
+
+  const prevTotalPosts = previousPosts.length || 1; // Prevent division by zero
+  const prevTotalComments = previousPosts.reduce((acc, post) => acc + post.comments.length, 0) || 1;
+  const prevAvgReplies = Math.round(previousPosts.reduce((acc, post) => acc + parseInt(post.replies), 0) / prevTotalPosts);
+  const prevAvgLikes = Math.round(previousPosts.reduce((acc, post) => acc + post.comments.reduce((cAcc, comment) => cAcc + comment.likes, 0), 0) / prevTotalComments);
+  const prevUniqueUsers = new Set(previousPosts.flatMap(post => post.comments.map(comment => comment.username))).size || 1;
+
+  // Calculate percentage changes
+  const calculatePercentChange = (current: number, previous: number) => {
+    return Math.round(((current - previous) / previous) * 100);
+  };
+
+  const changes = {
+    totalComments: calculatePercentChange(totalComments, prevTotalComments),
+    avgReplies: calculatePercentChange(avgReplies, prevAvgReplies),
+    avgLikes: calculatePercentChange(avgLikes, prevAvgLikes),
+    totalPosts: calculatePercentChange(totalPosts, prevTotalPosts),
+    uniqueUsers: calculatePercentChange(uniqueUsers, prevUniqueUsers),
+  };
+
   // Process all topics (removed the slice)
   const topicChanges = Object.entries(
     filteredPosts.reduce((acc: { [key: string]: { posts: number, recent: number } }, post) => {
@@ -146,12 +172,13 @@ export default async function Home({ searchParams }: Props) {
         avgLikes={avgLikes}
         totalPosts={totalPosts}
         uniqueUsers={uniqueUsers}
+        changes={changes}
       />
-      <div className="grid grid-cols-1 gap-4 sm:gap-8">
+      <div className="grid grid-cols-2 gap-4 sm:gap-8">
         <ActivityTimeline timelineData={timelineData} />
         <UserActivityChart userActivity={topLikedComments} />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-4 sm:mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-4 sm:mt-6 min-h-[400px]">
         <CategoriesChart data={categoryChartData} />
         <SentimentChart data={sentimentChartData} />
         <SentimentByCategoryChart data={sentimentByCategoryData} />

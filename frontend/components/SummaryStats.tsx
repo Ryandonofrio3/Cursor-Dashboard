@@ -9,6 +9,13 @@ interface SummaryStatsProps {
   avgLikes: number;
   totalPosts: number;
   uniqueUsers: number;
+  changes: {
+    totalComments: number;
+    avgReplies: number;
+    avgLikes: number;
+    totalPosts: number;
+    uniqueUsers: number;
+  };
 }
 
 export function SummaryStats({
@@ -17,27 +24,33 @@ export function SummaryStats({
   avgLikes,
   totalPosts,
   uniqueUsers,
+  changes,
 }: SummaryStatsProps) {
   const stats = [
     { 
       label: "Total Comments",
       value: totalComments,
+      change: changes.totalComments,
     },
     { 
       label: "Avg Replies",
       value: avgReplies,
+      change: changes.avgReplies,
     },
     { 
       label: "Avg Likes",
       value: avgLikes,
+      change: changes.avgLikes,
     },
     { 
       label: "Total Posts",
       value: totalPosts,
+      change: changes.totalPosts,
     },
     { 
       label: "Unique Users",
       value: uniqueUsers,
+      change: changes.uniqueUsers,
     },
   ];
 
@@ -67,6 +80,7 @@ export function SummaryStats({
                 <p className="text-xl sm:text-3xl font-bold text-white">
                   {stat.value.toLocaleString()}
                 </p>
+               
               </div>
             </Card>
           </motion.div>

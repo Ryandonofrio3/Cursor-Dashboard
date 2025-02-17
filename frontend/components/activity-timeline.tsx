@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react'
 import { Card } from "@/components/ui/card"
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
 
 export function ActivityTimeline({ timelineData }: { timelineData: any[] }) {
   const monthlyData = useMemo(() => {
@@ -62,8 +62,14 @@ export function ActivityTimeline({ timelineData }: { timelineData: any[] }) {
                 });
               }}
             />
-            <Line type="monotone" dataKey="comments" stroke="#fff" strokeWidth={2} dot={false} />
-            <Line type="monotone" dataKey="likes" stroke="#666" strokeWidth={2} dot={false} />
+            <Legend 
+              verticalAlign="top" 
+              height={36}
+              wrapperStyle={{ paddingTop: "10px" }}
+              formatter={(value) => <span style={{ color: '#fff' }}>{value}</span>}
+            />
+            <Line type="monotone" dataKey="comments" name="Comments" stroke="#fff" strokeWidth={2} dot={false} />
+            <Line type="monotone" dataKey="likes" name="Likes" stroke="#666" strokeWidth={2} dot={false} />
           </LineChart>
         </ResponsiveContainer>
       </div>

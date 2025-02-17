@@ -12,8 +12,8 @@ interface Topic {
 export function TrendingTopics({ topics }: { topics: Topic[] }) {
   return (
     <Card className="p-6 bg-black text-white border border-zinc-800">
-      <h2 className="text-2xl text-center font-semibold mb-6">Change in Topics</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <h2 className="text-2xl font-semibold mb-6">Change in Topics</h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {topics.map((topic) => (
           <motion.div
             key={topic.name}

@@ -55,7 +55,7 @@ export function SentimentByCategoryChart({ data }: SentimentByCategoryChartProps
                 top: 20,
                 right: 30,
                 left: 20,
-                bottom: 5,
+                bottom: 100 // Increased bottom margin to accommodate labels
               }}
             >
               <Legend verticalAlign="top" height={36}/>
@@ -63,8 +63,14 @@ export function SentimentByCategoryChart({ data }: SentimentByCategoryChartProps
                 dataKey="category" 
                 angle={-45}
                 textAnchor="end"
-                height={80}
+                height={100} // Increased height for labels
+                interval={0} // Show all labels
                 stroke="white"
+                tick={{
+                  fill: 'white',
+                  fontSize: 12,
+                  dy: 10 // Adjust vertical position of labels
+                }}
               />
               <YAxis 
                 stroke="white"
@@ -77,16 +83,13 @@ export function SentimentByCategoryChart({ data }: SentimentByCategoryChartProps
               />
               <Tooltip
                 contentStyle={{
-                  backgroundColor: '#dedede',
+                  backgroundColor: '#1a1a1a',
                   border: '1px solid #333333',
                   borderRadius: '6px',
                   padding: '12px'
                 }}
                 formatter={(value: number) => [`${value.toFixed(1)}%`]}
               />
-              {/* positive: '#A8A8A8', // Light gray
-  negative: '#4A4A4A', // Dark gray
-  neutral: '#787878'  // Medium gray */}
               <Bar 
                 dataKey="positive" 
                 fill="#A8A8A8" 
