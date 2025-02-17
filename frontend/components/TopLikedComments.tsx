@@ -57,7 +57,7 @@ export function TopLikedComments({ data, timeframe }: TopLikedCommentsProps) {
             <p className="text-lg sm:text-2xl font-semibold text-white sm:ml-2">of {finalTimeframe}</p>
           )}
           {timeframe !== 'all' && (
-            <p className="text-lg sm:text-2xl  text-white sm:ml-2">of the last {finalTimeframe}</p>
+            <p className="text-lg sm:text-2xl font-semibold text-white sm:ml-2">of the last {finalTimeframe}</p>
           )}
         </span>
       <div className="min-h-[300px] sm:min-h-[400px] relative mt-2">
