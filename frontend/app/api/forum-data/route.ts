@@ -7,9 +7,7 @@ export const revalidate = 3600 // Revalidate every hour
 
 export async function GET() {
   try {
-    // Get the path to the JSON file - looking in same current api/forum-data folder
-    // frontend/app/api/forum-data/cursor_posts_final.json
-    const jsonPath = "/Users/ryandonofrio/Desktop/cursor_dash/frontend/app/api/forum-data/cursor_posts_final.json"
+    const jsonPath = path.join(process.cwd(), 'public', 'cursor_posts_final.json')
     
     // Read the JSON file
     const jsonData = await fs.readFile(jsonPath, 'utf8')
@@ -31,4 +29,4 @@ export async function GET() {
       { status: 500 }
     )
   }
-} 
+}
