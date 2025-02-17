@@ -9,12 +9,15 @@ import { TrendingTopics } from '@/components/TrendingTopics'
 import { ActivityTimeline } from '@/components/activity-timeline'
 import { UserActivityChart } from '@/components/user-activity-chart'
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: { period?: string }
-}) {
-  const period = searchParams.period || 'all';
+type Props = {
+  searchParams: Promise<{
+    period?: string
+  }>
+}
+
+export default async function Home({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams;
+  const period = resolvedSearchParams.period || 'all';
   
   // Get cutoff date based on period
   const now = new Date();
