@@ -1,0 +1,402 @@
+[
+  {
+    "text": "cursor",
+    "value": 2840
+  },
+  {
+    "text": "code",
+    "value": 967
+  },
+  {
+    "text": "issue",
+    "value": 934
+  },
+  {
+    "text": "using",
+    "value": 849
+  },
+  {
+    "text": "like",
+    "value": 848
+  },
+  {
+    "text": "would",
+    "value": 830
+  },
+  {
+    "text": "file",
+    "value": 777
+  },
+  {
+    "text": "composer",
+    "value": 714
+  },
+  {
+    "text": "version",
+    "value": 681
+  },
+  {
+    "text": "work",
+    "value": 653
+  },
+  {
+    "text": "also",
+    "value": 652
+  },
+  {
+    "text": "files",
+    "value": 626
+  },
+  {
+    "text": "chat",
+    "value": 597
+  },
+  {
+    "text": "context",
+    "value": 502
+  },
+  {
+    "text": "still",
+    "value": 490
+  },
+  {
+    "text": "model",
+    "value": 476
+  },
+  {
+    "text": "time",
+    "value": 460
+  },
+  {
+    "text": "agent",
+    "value": 450
+  },
+  {
+    "text": "working",
+    "value": 446
+  },
+  {
+    "text": "could",
+    "value": 426
+  },
+  {
+    "text": "dont",
+    "value": 422
+  },
+  {
+    "text": "problem",
+    "value": 405
+  },
+  {
+    "text": "need",
+    "value": 393
+  },
+  {
+    "text": "rules",
+    "value": 392
+  },
+  {
+    "text": "thanks",
+    "value": 378
+  },
+  {
+    "text": "even",
+    "value": 371
+  },
+  {
+    "text": "make",
+    "value": 365
+  },
+  {
+    "text": "models",
+    "value": 365
+  },
+  {
+    "text": "project",
+    "value": 356
+  },
+  {
+    "text": "know",
+    "value": 348
+  },
+  {
+    "text": "seems",
+    "value": 348
+  },
+  {
+    "text": "image",
+    "value": 345
+  },
+  {
+    "text": "want",
+    "value": 340
+  },
+  {
+    "text": "think",
+    "value": 340
+  },
+  {
+    "text": "error",
+    "value": 340
+  },
+  {
+    "text": "tried",
+    "value": 340
+  },
+  {
+    "text": "help",
+    "value": 321
+  },
+  {
+    "text": "vscode",
+    "value": 321
+  },
+  {
+    "text": "doesnt",
+    "value": 318
+  },
+  {
+    "text": "works",
+    "value": 317
+  },
+  {
+    "text": "update",
+    "value": 316
+  },
+  {
+    "text": "mode",
+    "value": 311
+  },
+  {
+    "text": "really",
+    "value": 304
+  },
+  {
+    "text": "requests",
+    "value": 299
+  },
+  {
+    "text": "request",
+    "value": 299
+  },
+  {
+    "text": "claude",
+    "value": 293
+  },
+  {
+    "text": "able",
+    "value": 289
+  },
+  {
+    "text": "please",
+    "value": 288
+  },
+  {
+    "text": "changes",
+    "value": 280
+  },
+  {
+    "text": "cant",
+    "value": 278
+  },
+  {
+    "text": "feature",
+    "value": 278
+  },
+  {
+    "text": "well",
+    "value": 275
+  },
+  {
+    "text": "something",
+    "value": 273
+  },
+  {
+    "text": "extension",
+    "value": 271
+  },
+  {
+    "text": "open",
+    "value": 266
+  },
+  {
+    "text": "back",
+    "value": 261
+  },
+  {
+    "text": "issues",
+    "value": 245
+  },
+  {
+    "text": "better",
+    "value": 245
+  },
+  {
+    "text": "settings",
+    "value": 243
+  },
+  {
+    "text": "server",
+    "value": 242
+  },
+  {
+    "text": "might",
+    "value": 239
+  },
+  {
+    "text": "used",
+    "value": 237
+  },
+  {
+    "text": "team",
+    "value": 237
+  },
+  {
+    "text": "first",
+    "value": 233
+  },
+  {
+    "text": "prompt",
+    "value": 231
+  },
+  {
+    "text": "find",
+    "value": 227
+  },
+  {
+    "text": "right",
+    "value": 227
+  },
+  {
+    "text": "fast",
+    "value": 225
+  },
+  {
+    "text": "much",
+    "value": 214
+  },
+  {
+    "text": "apply",
+    "value": 213
+  },
+  {
+    "text": "windows",
+    "value": 209
+  },
+  {
+    "text": "every",
+    "value": 208
+  },
+  {
+    "text": "sure",
+    "value": 206
+  },
+  {
+    "text": "good",
+    "value": 205
+  },
+  {
+    "text": "sonnet",
+    "value": 205
+  },
+  {
+    "text": "system",
+    "value": 205
+  },
+  {
+    "text": "great",
+    "value": 201
+  },
+  {
+    "text": "since",
+    "value": 198
+  },
+  {
+    "text": "window",
+    "value": 196
+  },
+  {
+    "text": "without",
+    "value": 193
+  },
+  {
+    "text": "command",
+    "value": 192
+  },
+  {
+    "text": "different",
+    "value": 192
+  },
+  {
+    "text": "slow",
+    "value": 191
+  },
+  {
+    "text": "start",
+    "value": 189
+  },
+  {
+    "text": "screenshot",
+    "value": 187
+  },
+  {
+    "text": "however",
+    "value": 186
+  },
+  {
+    "text": "trying",
+    "value": 184
+  },
+  {
+    "text": "support",
+    "value": 184
+  },
+  {
+    "text": "create",
+    "value": 183
+  },
+  {
+    "text": "found",
+    "value": 182
+  },
+  {
+    "text": "already",
+    "value": 181
+  },
+  {
+    "text": "always",
+    "value": 181
+  },
+  {
+    "text": "thats",
+    "value": 180
+  },
+  {
+    "text": "check",
+    "value": 179
+  },
+  {
+    "text": "getting",
+    "value": 179
+  },
+  {
+    "text": "terminal",
+    "value": 176
+  },
+  {
+    "text": "deepseek",
+    "value": 174
+  },
+  {
+    "text": "example",
+    "value": 173
+  },
+  {
+    "text": "folder",
+    "value": 173
+  },
+  {
+    "text": "change",
+    "value": 171
+  }
+]
