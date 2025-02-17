@@ -15,7 +15,7 @@ export function TimePeriodSelector({ currentPeriod = 'all' }: { currentPeriod?: 
   const router = useRouter()
 
   return (
-    <div className="flex gap-2 mb-6">
+    <div className="flex gap-4 mb-8 text-2xl">
       {periods.map(({ label, value }) => (
         <Button
           key={value}
@@ -23,6 +23,7 @@ export function TimePeriodSelector({ currentPeriod = 'all' }: { currentPeriod?: 
           onClick={() => {
             router.push(`?period=${value}`)
           }}
+          className="text-xl px-6 py-3 h-auto"
         >
           {label}
         </Button>

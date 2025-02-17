@@ -58,6 +58,7 @@ export function SentimentByCategoryChart({ data }: SentimentByCategoryChartProps
                 bottom: 5,
               }}
             >
+              <Legend verticalAlign="top" height={36}/>
               <XAxis 
                 dataKey="category" 
                 angle={-45}
@@ -83,7 +84,6 @@ export function SentimentByCategoryChart({ data }: SentimentByCategoryChartProps
                 }}
                 formatter={(value: number) => [`${value.toFixed(1)}%`]}
               />
-              <Legend />
               {/* positive: '#A8A8A8', // Light gray
   negative: '#4A4A4A', // Dark gray
   neutral: '#787878'  // Medium gray */}

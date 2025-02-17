@@ -1,5 +1,4 @@
 import { ForumData, ForumPost, Comment } from '@/types/forum'
-import { DashboardCharts } from '@/components/dashboard-charts'
 import { SummaryStats } from '@/components/SummaryStats'
 import { CategoriesChart } from '@/components/CategoriesChart'
 import { SentimentChart } from '@/components/SentimentChart'
@@ -7,6 +6,8 @@ import { SentimentByCategoryChart } from '@/components/SentimentByCategoryChart'
 import { TopLikedComments } from '@/components/TopLikedComments'
 import { TimePeriodSelector } from '@/components/TimePeriodSelector'
 import { TrendingTopics } from '@/components/TrendingTopics'
+import { ActivityTimeline } from '@/components/activity-timeline'
+import { UserActivityChart } from '@/components/user-activity-chart'
 
 export default async function Home({
   searchParams,
@@ -128,8 +129,10 @@ export default async function Home({
     .sort((a, b) => b.trend - a.trend); // Keep sorting but remove slice
 
   return (
+    <div>
+    <h1 className="text-3xl font-bold mb-8">Cursor Forum Analytics Dashboard</h1>
+
     <div className="p-8 bg-background text-foreground bg-black">
-      <h1 className="text-3xl font-bold mb-8">Cursor Forum Analytics Dashboard</h1>
       <TimePeriodSelector currentPeriod={period} />
       <SummaryStats 
         totalComments={totalComments}
@@ -138,10 +141,10 @@ export default async function Home({
         totalPosts={totalPosts}
         uniqueUsers={uniqueUsers}
       />
-      <DashboardCharts 
-        timelineData={timelineData}
-        userActivity={topLikedComments}
-      />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <ActivityTimeline timelineData={timelineData} />
+        <UserActivityChart userActivity={topLikedComments} />
+      </div>
       <div className="grid grid-cols-3 gap-6 mt-6">
         <CategoriesChart data={categoryChartData} />
         <SentimentChart data={sentimentChartData} />
@@ -154,6 +157,7 @@ export default async function Home({
 
       </div>
 
+    </div>
     </div>
   );
 }
