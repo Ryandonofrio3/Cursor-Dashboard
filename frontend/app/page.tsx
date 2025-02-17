@@ -39,7 +39,10 @@ export default async function Home({ searchParams }: Props) {
   }
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-  const response = await fetch(`${baseUrl}/api/forum-data`, {
+  // Ensure the baseUrl includes a protocol
+  const formattedBaseUrl = baseUrl.startsWith('http') ? baseUrl : `https://${baseUrl}`;
+
+  const response = await fetch(`${formattedBaseUrl}/api/forum-data`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

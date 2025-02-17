@@ -8,10 +8,11 @@ export const revalidate = 3600 // Revalidate every hour
 export async function GET() {
   try {
     const jsonPath = path.join(process.cwd(), 'public', 'cursor_posts_final.json')
+    console.log("jsonPath", jsonPath)
     
     // Read the JSON file
     const jsonData = await fs.readFile(jsonPath, 'utf8')
-    
+    console.log("jsonData", jsonData)
     // Parse the JSON data
     const data = JSON.parse(jsonData) as ForumData
     
