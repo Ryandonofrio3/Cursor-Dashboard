@@ -8,6 +8,7 @@ import { TimePeriodSelector } from '@/components/TimePeriodSelector'
 import { TrendingTopics } from '@/components/TrendingTopics'
 import { ActivityTimeline } from '@/components/activity-timeline'
 import { UserActivityChart } from '@/components/user-activity-chart'
+import Image from 'next/image'
 
 type Props = {
   searchParams: Promise<{
@@ -163,7 +164,16 @@ export default async function Home({ searchParams }: Props) {
 
   return (
     <div>
-    <h1 className="text-3xl font-bold mb-4 px-4 sm:px-8 sm:mb-8">Cursor Forum Analytics Dashboard</h1>
+      <div className="flex items-center gap-4 px-4 sm:px-8 mb-4 mt-12">
+        <Image 
+          src="/logo.jpeg" 
+          alt="Cursor Logo" 
+          width={100} 
+          height={100}
+          className="rounded-full"
+        />
+        <h1 className="text-3xl font-bold">Cursor Forum Analytics Dashboard</h1>
+      </div>
 
     <div className="p-4 sm:p-8 bg-background text-foreground bg-black">
       <TimePeriodSelector currentPeriod={period} />
